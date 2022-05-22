@@ -1,0 +1,43 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	
+}
+
+body {
+	height: 100vh;
+	background: #000;
+	display: grid;
+	place-content: center;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2em;
+	width: 100%;
+	max-width: 600px;	
+}
+
+img {
+	width: 40%;
+	height: 100%;
+/* ESPEJO */
+	-webkit-box-reflect: below 2px linear-gradient(to bottom, transparent, #0004);
+/* EFECTO */
+	transform: perspective(125px) rotateY(10deg);	
+/* TRANSICIÓN */
+	transition: 500ms;
+}
+
+.container:hover img {
+	opacity: .3;
+}
+
+/* SE REPITE .CONTAINER PARA "PISAR" LA CLASE ANTERIOR */
+.container img:hover {
+	transform: rotateY(0deg);
+	opacity: 1;
+}
